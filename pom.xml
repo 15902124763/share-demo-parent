@@ -88,5 +88,11 @@
             <artifactId>gson</artifactId>
             <version>${gson-version}</version>
         </dependency>
+
+        <!--aop 4 boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
     </dependencies>
 </project>
