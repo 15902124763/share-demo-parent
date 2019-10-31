@@ -6,3 +6,32 @@
 
 2. 注解说明
 
+// 2.1 指定一个类为切面类
+@Aspect
+
+// 2.2 指定切入点表达式
+@Pointcut("execution(*com.yarm.service.demo.insert(..))")
+    //表示匹配所有方法,不建议使用
+    2.2.1 execution(* *(..))
+
+    //表示匹配com.yarm.service.demo.DemoService中所有的公有方法
+    2.2.2 execution(public *com.yarm.service.demo.DemoService.*(..))
+
+    //表示匹配com.yarm.service.demo包及其子包下的所有方法
+    2.2.3 execution(*com.yarm.service.demo..*.*(..))
+
+
+// 前置通知: 目标方法之前执行
+@Before("pointCut_()")
+
+// 后置通知：目标方法之后执行（始终执行）
+@After("pointCut_()")
+
+// 环绕通知：目标方法前后执行
+@Around
+
+// 返回后通知： 执行方法结束前执行(异常不执行)
+@AfterReturning("pointCut_()")
+
+// 异常通知:  出现异常时候执行
+@AfterThrowing("pointCut_()")
